@@ -3,7 +3,7 @@ from rest_framework import routers
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
-from .views import NoteViewSet
+from .views import NoteViewSet, LinkViewSet
 
 @api_view(['GET'])
 def api_root(request):
@@ -19,5 +19,6 @@ urlpatterns = [
 
 router = routers.SimpleRouter()
 router.register('notes', NoteViewSet)
+router.register('links', LinkViewSet)
 
 urlpatterns += router.urls

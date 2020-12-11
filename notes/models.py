@@ -7,3 +7,10 @@ class Note(models.Model):
 
     def __str__(self):
         return f"{self.text[:100]}"
+
+class Link(models.Model):
+    note1 = models.IntegerField(default=0)
+    note2 = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.note1}-{self.note2}"
